@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+#navbar-container{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(18,22,24);
+  color: grey;
+  display: flex;
+  align-items: center;
+}
+#navbar-container .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  margin-top: 0px;
+}
+.logo a {
+  text-decoration: none;
+  color: rgb(218, 213, 213);
+}
+#navbar-container ul{
+  width:700px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  color: grey;
+}
+#navbar-container ul a{
+  text-decoration: none;
+  color: rgb(184, 178, 178);
+  font-weight: 400;
+}
+#navbar-container ul a:hover{
+  color: rgb(250,197,100);
+}
+.slider-container{
+  border:1px solid black;
+  height: 90vh;
+  position:relative;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("https://freerangestock.com/sample/140599/pizzas-on-dark-taple-top-background--with-copyspace.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  animation: slider 40s  linear infinite ;
+ 
+}
+@keyframes slider {
+  0%{
+      background-image: url("https://freerangestock.com/sample/140599/pizzas-on-dark-taple-top-background--with-copyspace.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  25%{
+      background-image: url("https://i.pinimg.com/originals/24/16/85/2416852ecd4499cda91de41e17140909.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  50%{
+      background-image: url("https://www.gregorczyk.co.uk/img-get2/I0000YsNtkYUZgm4/fit=1000x750/Pizza-Ingredients-Pizza-Luxe.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  75%{
+      background-image: url("https://ik.imagekit.io/awwybhhmo/satellite_images/pizza/beyondmenu/about_us/8.jpg?tr=w-3840");
+      background-repeat: no-repeat;
+      background-size: cover;  
+  }
+  100%{
+      background-image: url("https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/pkebyzqr/c245a18c-f668-4a71-b4bb-45b48efbccc2.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+}
+.slider-container  h1{
+  color: #fff;
+}
+.overlay{
+  position:absolute;
+  top:0;
+  height:100%;
+  width:100%;
+  background: #0500008a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.overlay h1 {
+  font-size:80px;
+  font-weight: 500;
+  font-family: 'Great Vibes', cursive;
+}
+.button{
+  padding:10px 15px;
+  background-color: transparent;
+  border:1px solid #fff;
+  color:#fff;
+  margin-left:10px;
+}
+.button:hover{
+  background:rgb(250,197,100);
+  color:rgb(59, 55, 55); 
+}
+.yellow{
+  background:rgb(250,197,100);
+  color:rgb(59, 55, 55);
+  border:none;
+}
+.yellow:hover{
+  background: transparent;
+  border:1px solid #fff;
+  color:#fff;
+}
+.contact{
+  height:200px;
+  width: 100%;
+  margin: auto;
+ display: flex;
+}
+.contact div{
+  height: 100%;
+}
+.contact .address{
+  width:70%;
+  background-color: rgb(0,0,0);
+  color: #fff;
+  display:flex;
+  justify-content:center;
+  align-items : center;
+}
+.address div{
+  height:100px;
+  width :30%;
+}
+.contact .social {
+  width: 30%;
+  background-color: rgb(250,197,100);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.social p{
+  letter-spacing :10px;
+}
+#res{
+  background-image: url("https://img.freepik.com/premium-photo/wood-black-background-texture_28893-212.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Hind Siliguri', sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+   flex-direction:column;
+}
+#res1{
+  background-image: url("https://img.freepik.com/premium-photo/wood-black-background-texture_28893-212.jpg");
+  background-position: center;
+  background-size:cover ;
+}
+.service-container{
+  width:100%;
+  height:650px;
+  background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("https://www.alamedafoodservice.com/images/about/ABOUT_TRUCK_PHOTO_BANNER_SECTION.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#service-row div{
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.service-container h1{
+  font-weight: 500;
+  font-size: 60px;
+  color: black;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+.menu-container{
+  border:1px solid black;
+  width: 100%;
+  height: 800px;
+  background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://wallpaperaccess.com/full/8481399.jpg");
+  background-position: center;
+  background-size: cover;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+.pizza-data{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.single-menu-div{
+ 
+  display: flex;
+  height:250px;
+  width: 500px;
+}
+.single-menu-div>div{
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.menu-img{
+  width:100%;
+  height: 100%;
+}
+.overlay2{
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+.menu-img-div:hover .overlay2{
+  left: 0;
+}
+.content-div{
+  background: rgba(0,0,0,0.6);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   font-family: 'Hind Siliguri', sans-serif;
+}
+

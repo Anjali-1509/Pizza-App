@@ -10,7 +10,6 @@ const PizzaMenu = ({ data }) => {
     const dispatch = useDispatch()
     
     const addToCartHandler = ()=>{
-    console.log("button clicked")
     dispatch(addToCart(data, quantity, varient))
     }
 

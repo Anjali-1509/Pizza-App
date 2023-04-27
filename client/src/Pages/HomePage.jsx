@@ -133,7 +133,9 @@ const HomePage = () => {
                 <div className='pizza-data' style={{marginTop:"20px"}}>
             {
               pizzas.map((pizza)=>
+              <div key={pizza.name}>
                <PizzaMenu data={pizza} />
+               </div>
               )
             }
           </div>

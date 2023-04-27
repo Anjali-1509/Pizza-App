@@ -96,7 +96,6 @@ const pizzas = [
 exports.pizzaController= async(req, res)=>{
 try{
  let data = req.body
- console.log(data)
  let pizza = await PizzaModel.insertMany(pizzas)
  return res.status(201).send({success:true, pizza:pizza})
 }

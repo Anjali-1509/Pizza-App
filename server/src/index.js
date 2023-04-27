@@ -5,6 +5,7 @@ const cors = require("cors")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 const pizzaRoute =require("./Routes/pizzaRoute.js")
+const userRoute = require("./Routes/userRoutes")
 
 
 
@@ -22,6 +23,7 @@ app.use(morgan("dev"))
 
 
 app.use("/pizza", pizzaRoute)
+app.use("/user", userRoute)
 
 let PORT = process.env.PORT
 app.listen(PORT, () => {

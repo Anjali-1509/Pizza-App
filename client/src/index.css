@@ -152,7 +152,7 @@ html{
 }
 .contact .social {
   width: 30%;
-  background-color: rgb(250,197,100);
+  background-color: rgb(26, 21, 13);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -257,5 +257,26 @@ html{
    align-items: center;
    flex-direction: column;
    font-family: 'Hind Siliguri', sans-serif;
+}
+.btn{
+  padding: 10px 15px;
+  background-color: rgb(250,197,100);
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 0;
+}
+.form-control{
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+}
+.main{
+  margin-top: -0px;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://wallpaperaccess.com/full/8481399.jpg");
 }
 

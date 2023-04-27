@@ -1,42 +1,85 @@
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai"
+import { addToCart,deleteFromCart } from "../Actions/cartAction"
+import { FaTrash } from "react-icons/fa"
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function CartPage() {
     const cartState = useSelector((state) => state.cartReducer)
     const cartItems = cartState.cartItems
-    console.log(cartItems)
+    const dispatch = useDispatch()
+    const subtotal = cartItems.reduce((acc, item)=>acc+item.price,0)
 
     return (
-        <div>
-            <div className="container mt-5">
+        <>
+      <Container>
+        <Row>
+          <Col md={6}>
+            <h1>My Cart</h1>
+            <Row>
+              {cartItems.map((item) => (
+                <>
+                  <Col md={7}>
+                    <h5>
+                      {item.name} [{item.varient}]
+                    </h5>
+                    <h6>
+                      {" "}
+                      Price : {item.quantity} X {item.prices[0][item.varient]} ={" "}
+                      {item.price}
+                    </h6>
 
-                <div className="row">
-                    <div className="col-md-6">
-                        <h1>my cart</h1>
-                        <div style={{border:"1px solid green", height:"200px"}} className="row">
-                            {
-                                cartItems.map((item) =>
-                                <>
-                                    <div style={{border:"1px solid blue"}} className="col-md-7 h-100 d-flex flex-column justify-content-center align-self-center">
-                                        <h5>{item.name} [{item.varient}]</h5>
-                                        <h6>
-                                            Price : {item.quantity}×{item.prices[0][item.varient]} = ₹{item.price}
-                                        </h6>
-                                    </div>
-                                    <div style={{border:"1px solid red"}} className="col-md-5 h-100">
-                                    <img className="h-100 w-100" src={item.image}  alt="pizza"/>
-                                    </div>
-                                    </>
-                                )
-                            }
-                        </div>
-                    </div>
-
-                    <div className="col-md-6">
-                        <h1>Payment</h1>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                    <h6>
+                      Quantity :&nbsp;
+                      <AiFillMinusCircle
+                        className="text-danger"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          dispatch(
+                            addToCart(item, item.quantity - 1, item.varient)
+                          );
+                        }}
+                      />{" "}
+                      &nbsp;
+                      {item.quantity} &nbsp;
+                      <AiFillPlusCircle
+                        className="text-success"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          dispatch(
+                            addToCart(item, item.quantity + 1, item.varient)
+                          );
+                        }}
+                      />
+                    </h6>
+                  </Col>
+                  <Col md={5}>
+                    <img
+                      alt={item.name}
+                      src={item.image}
+                      style={{ width: "80px", height: "80px" }}
+                    />
+                    <FaTrash
+                      className="text-danger"
+                      style={{ cursor: "pointer", marginLeft: "20px" }}
+                      onClick={() => {
+                        dispatch(deleteFromCart(item));
+                      }}
+                    />
+                  </Col>
+                  <hr />
+                </>
+              ))}
+            </Row>
+          </Col>
+          <Col md={4}>
+            <h1>Payment Info</h1>
+            <h4>Subtotal</h4>
+            <h4>Rs :{subtotal}/-</h4>
+            <button className="btn btn-warning">CHECKOUT</button>
+          </Col>
+        </Row>
+      </Container>
+    </>
     )
 }

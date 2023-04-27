@@ -15,3 +15,19 @@ catch(err){
     return res.status(500).send({success:false, message : 'Something Went Wrong While Creating User', error: err.message})
 }
 }
+
+
+exports.loginUser = async(req, res)=>{
+try{
+let {email, password} = req.body
+if(!email) return res.status(400).send({succss:false, message: "Email Is Required"})
+if(!password) return res.status(400).send({succss:false, message: "Password Is Required"})
+
+let user = await UserModel.findOne({email:email, password: password}).select({password:0, __v : 0,createdAt:0, updatedAt:0})
+if(!user) return res.status(400).send({success:false, message:"User Not Found"})
+return res.status(200).send(user)
+}
+catch(err){
+    return res.status(500).send({success:false, message : 'Something Went Wrong While Logging In', error: err.message})   
+}
+}

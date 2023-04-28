@@ -3,6 +3,7 @@ import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai"
 import { addToCart,deleteFromCart } from "../Actions/cartAction"
 import { FaTrash } from "react-icons/fa"
 import { Container, Row, Col } from "react-bootstrap";
+import Checkout from "../Components/Checkout";
 
 export default function CartPage() {
     const cartState = useSelector((state) => state.cartReducer)
@@ -76,7 +77,7 @@ export default function CartPage() {
             <h1>Payment Info</h1>
             <h4>Subtotal</h4>
             <h4>Rs :{subtotal}/-</h4>
-            <button className="btn btn-warning">CHECKOUT</button>
+            <Checkout subtital={subtotal} />
           </Col>
         </Row>
       </Container>

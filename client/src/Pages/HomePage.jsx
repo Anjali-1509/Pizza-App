@@ -10,6 +10,7 @@ import pizzaData from "../pizzaData"
 import PizzaMenu from '../Components/PizzaMenu'
 import {useDispatch, useSelector} from "react-redux"
 import { getAllpizzas } from './../Actions/pizzaAction';
+import Spinner from '../Components/Spinner'
 
 
 const HomePage = () => {
@@ -127,7 +128,7 @@ const HomePage = () => {
           <hr/>
           <p data-aos="fade-right">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             {
-              loading ? (<h1>Loading...</h1>)
+              loading ? <Spinner />
               : error ? (<h1>Error</h1>)
               :(
                 <div className='pizza-data' style={{marginTop:"20px"}}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import toast, { Toaster } from 'react-hot-toast';
 import Rout from '../Routes/Rout'
 
 const Layout = ({children}) => {
@@ -9,6 +10,7 @@ const Layout = ({children}) => {
       <Rout />
       <main>
         {children}
+        <Toaster />
       </main>
     </div>
   )

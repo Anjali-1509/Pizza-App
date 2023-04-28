@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import {useSelector, useDispatch} from "react-redux"
 import { registerUser } from '../Actions/userAction'
+import toast from "react-hot-toast"
 
 const Registeration = () => {
     const [name, setName] = useState("")
@@ -11,6 +12,8 @@ const Registeration = () => {
     const [confirmPassword, setConfirmPassword] = useState("")
 
     const dispatch = useDispatch()
+    const userState= useSelector((state)=>state.registerUserReducer)
+    const {success, err}= userState
 
     const handleSubmit=(e)=>{
     e.preventDefault()
@@ -25,6 +28,8 @@ const Registeration = () => {
 
     return (
         <div className="main">
+            {success &&  toast.success("Registered Successfully")}
+            {err && toast.error("Something is Wrong")}
             <div style={{ width: "500px", padding: "30px", background: "white", boxShadow: "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px" }} className="container">
                 <h1>REGISTER</h1>
                 <form onSubmit={handleSubmit}>

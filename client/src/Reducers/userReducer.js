@@ -25,7 +25,7 @@ export const loginUserReducer=(state={}, action)=>{
         return{
             loading: true
         }
-        case "USER_LOGIN-SUCCESS" : 
+        case "USER_LOGIN_SUCCESS" : 
         return {
            loading: false,
            success: true,
@@ -36,6 +36,6 @@ export const loginUserReducer=(state={}, action)=>{
             loading: false,
             err: action.payload
         }
-        default : return {state}
+        default : return state
     }
 }

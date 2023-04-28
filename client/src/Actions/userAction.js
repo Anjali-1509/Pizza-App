@@ -16,12 +16,16 @@ export const loginUser = (user)=>async(dispatch)=>{
   dispatch({type:"USER_LOGIN_REQUEST"})
   try{
    let res = await axios.post("http://localhost:8080/user/login",user)
-   console.log(res)
-   dispatch({type:"USER_LOGIN-SUCCESS", payload : res.data})
+   dispatch({type:"USER_LOGIN_SUCCESS", payload : res.data})
    localStorage.setItem("loggedInUser", JSON.stringify(res.data))
    window.location.href="/"
   }
   catch(err){
     dispatch({type:"USER_LOGIN_FAIL",payload : err})
   }
+}
+
+export const logoutUser=()=>(dispatch)=>{
+  localStorage.removeItem("loggedInUser")
+  window.location.href= "/login"
 }
